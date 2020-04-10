@@ -1,4 +1,5 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 
 import "./App.scss";
 import Homepage from "./pages/Homepage/homepage.component";
@@ -6,7 +7,9 @@ import Homepage from "./pages/Homepage/homepage.component";
 function App() {
   return (
     <>
-      <Homepage />
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+      </Switch>
     </>
   );
 }
