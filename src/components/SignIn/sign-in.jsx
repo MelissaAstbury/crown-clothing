@@ -27,7 +27,8 @@ class SignIn extends React.Component {
       this.setState({ email: "", password: "", loading: false });
       this.props.history.push("/");
     } catch (error) {
-      console.log(error);
+      this.setState({ loading: false });
+      console.log(error.message);
     }
   };
 

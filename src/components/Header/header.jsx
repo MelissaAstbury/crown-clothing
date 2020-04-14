@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import { auth } from "../../firebase/firebase.utils";
 
@@ -7,6 +8,7 @@ import { ReactComponent as Logo } from "../../assets/images/crown.svg";
 import "./header.scss";
 
 const header = ({ user }) => {
+  console.log(user);
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -33,4 +35,8 @@ const header = ({ user }) => {
   );
 };
 
-export default header;
+const mapStateToProps = (state) => ({
+  user: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(header);
