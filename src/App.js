@@ -8,28 +8,27 @@ import ShopPage from "./pages/Shop/shop";
 import Header from "./components/Header/header";
 import SignInAndSignUpPage from "./pages/SignInAndSignUp/SignInAndSignUp";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import { setCurrentUser } from "./redux/user/user.actions";
+import { setCurrentUser } from "./redux/User/user.actions";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    // const { setCurrentUser } = this.props;
+    const { setCurrentUser } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot((snapShot) => {
-          this.props.setCurrentUser({
+          setCurrentUser({
             id: snapShot.id,
             ...snapShot.data(),
           });
         });
       }
-      {
-        this.props.setCurrentUser(userAuth);
-      }
+
+      setCurrentUser(userAuth);
     });
   }
 

@@ -9,8 +9,7 @@ import "./header.scss";
 import CartIcon from "../../components/CartIcon/cart-icon";
 import CartDropDown from "../CartDropDown/cart-dropdown";
 
-const header = ({ user, hidden }) => {
-  console.log(user);
+const header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -23,7 +22,7 @@ const header = ({ user, hidden }) => {
         <Link className="option" to="/shop">
           CONTACT
         </Link>
-        {user ? (
+        {currentUser ? (
           <div className="option" onClick={() => auth.signOut()}>
             SIGN OUT
           </div>
@@ -40,8 +39,8 @@ const header = ({ user, hidden }) => {
 };
 
 const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-  currentUser,
-  hidden,
+  currentUser: currentUser,
+  hidden: hidden,
 });
 
 export default connect(mapStateToProps)(header);
