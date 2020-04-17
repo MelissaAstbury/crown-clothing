@@ -3,13 +3,13 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import CollectionOverview from "../../components/CollectionsOverview/collections-overview";
-import CategoryPage from "../Category/category";
+import CollectionPage from "../Collection/collection";
 
 // class ShopPage extends Component
 const ShopPage = ({ match }) => (
   <div className="shop-page">
     <Route exact path={`${match.path}`} component={CollectionOverview} />
-    <Route path={`${match.path}/:categoryId`} component={CategoryPage} />
+    <Route path={`${match.path}/:collectionId`} component={CollectionPage} />
   </div>
 );
 
