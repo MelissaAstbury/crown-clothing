@@ -7,7 +7,7 @@ import CustomButton from "../CustomButton/custom-button";
 import CartItem from "../CartItem/cart-item";
 import {
   selectCartItems,
-  selectCartItemsCount,
+  // selectCartItemsCount,
 } from "../../redux/Cart/cart.selectors";
 import { toggleCartHidden } from "../../redux/Cart/cart.actions";
 
