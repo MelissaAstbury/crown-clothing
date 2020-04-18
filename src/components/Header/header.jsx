@@ -10,7 +10,7 @@ import "./header.scss";
 import CartIcon from "../../components/CartIcon/cart-icon";
 import CartDropDown from "../CartDropDown/cart-dropdown";
 import { selectCartHidden } from "../../redux/Cart/cart.selectors";
-import { selectCurrentUser } from "../../redux/User/user.selector";
+import { selectCurrentUser } from "../../redux/user/user.selector";
 
 const header = ({ currentUser, hidden }) => {
   return (
@@ -22,9 +22,9 @@ const header = ({ currentUser, hidden }) => {
         <Link className="option" to="/shop">
           SHOP
         </Link>
-        <Link className="option" to="/shop">
+        {/* <Link className="option" to="/shop">
           CONTACT
-        </Link>
+        </Link> */}
         {currentUser ? (
           <div className="option" onClick={() => auth.signOut()}>
             SIGN OUT
