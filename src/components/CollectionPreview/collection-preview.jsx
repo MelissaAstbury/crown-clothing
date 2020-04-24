@@ -3,8 +3,6 @@ import { withRouter } from "react-router-dom";
 
 import CollectionItem from "../CollectionItem/collection-item";
 
-// import "./collection-preview.scss";
-
 import {
   CollectionPreviewContainer,
   TitleContainer,

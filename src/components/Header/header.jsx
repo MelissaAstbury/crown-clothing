@@ -1,21 +1,19 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { auth } from "../../firebase/firebase.utils";
-
-import { ReactComponent as Logo } from "../../assets/images/crown.svg";
-import "./header.scss";
 import CartIcon from "../../components/CartIcon/cart-icon";
 import CartDropDown from "../CartDropDown/cart-dropdown";
 import { selectCartHidden } from "../../redux/Cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selector";
+
+import { ReactComponent as Logo } from "../../assets/images/crown.svg";
+
 import {
   HeaderContainer,
   LogoContainer,
   OptionsContainer,
-  // OptionDiv,
   OptionLink,
 } from "./header.styles";
 
@@ -27,9 +25,6 @@ const header = ({ currentUser, hidden }) => {
       </LogoContainer>
       <OptionsContainer>
         <OptionLink to="/shop">SHOP</OptionLink>
-        {/* <Link className="option" to="/shop">
-          CONTACT
-        </Link> */}
         {currentUser ? (
           <OptionLink as="div" onClick={() => auth.signOut()}>
             SIGN OUT
