@@ -1,0 +1,26 @@
+.sign-in {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    margin: 10px 0px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.full-screen-spinner {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  z-index: 100;
+  background-color: #fff;
+  opacity: 0.7;
+  z-index: 100;
+  background-color: #fff;
+  opacity: 0.7;
+}
